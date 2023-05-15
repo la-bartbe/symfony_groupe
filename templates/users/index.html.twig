@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UsersController!{% endblock %}
+
+{% block body %}
+<div>
+    <h2>Affichage des Utilisateurs</h2>
+    <table border="2">
+    {% for u in users %}
+    <tr>
+        <td>{{u.nom}}</td>
+        <td>{{u.prenom}}</td>
+        <td>{{u.ville}}</td>
+        <td><a href="{{path('users_edit',{id:u.id})}}">Modifier</a></td>
+    </tr>
+    {% endfor %} 
+    </table>
+</div>
+{% endblock %}
